@@ -7,6 +7,6 @@ export const routes: Routes = [
   { path: 'home', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'reports', loadComponent: () => import('./components/reports/reports.component').then(m => m.ReportsComponent) },
   { path: 'expenses', loadComponent: () => import('./components/expenses/expenses.component').then(m => m.ExpensesComponent) },
-  { path: 'invoices', loadComponent: () => import('./components/invoices/invoices.component').then(m => m.InvoicesComponent) }
-
+  { path: 'invoices', loadComponent: () => import('./components/invoices/invoices.component').then(m => m.InvoicesComponent) },
+  { path: 'settings', loadComponent: () => import('./components/settings/settings.component').then(m => m.SettingsComponent) }
 ];

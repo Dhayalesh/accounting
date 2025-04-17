@@ -30,6 +30,7 @@ export class HomeComponent {
     if (name === 'Reports') this.router.navigate(['/reports']);
   else if (name === 'Expense') this.router.navigate(['/expenses']);
   else if (name === 'Invoices') this.router.navigate(['/invoices']);
+  else if (name === 'Settings') this.router.navigate(['/settings']);
   }
   
 }
