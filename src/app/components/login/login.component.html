@@ -1,0 +1,31 @@
+<div class="auth-container">
+  <h2 class="auth-title">Login</h2>
+
+  <form (ngSubmit)="handleLogin()">
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+
+    <button type="submit" class="auth-button">Login</button>
+
+    <p *ngIf="errorMessage" style="color: #c62828; font-size: 0.9rem; text-align: center;">
+      {{ errorMessage }}
+    </p>
+  </form>
+
+  <div style="text-align: center; margin-top: 1rem;">
+    <a routerLink="/register" style="color: #2e7d32; text-decoration: none;">Don't have an account? Register</a>
+  </div>
+</div>

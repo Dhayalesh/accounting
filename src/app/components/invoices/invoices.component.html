@@ -1,0 +1,54 @@
+<div class="invoice-container">
+    <h1 class="invoice-title">Invoices</h1>
+  
+    <div class="invoice-list">
+      <div class="invoice-row" *ngFor="let invoice of invoices">
+        <span>{{ invoice.description }}</span>
+        <span>Invoice No: {{ invoice.invoiceNumber }}</span>
+        <span class="amount">₹{{ invoice.amount }}</span>
+        <div class="image-preview" *ngIf="invoice.imageUrl">
+          <img [src]="invoice.imageUrl" alt="Invoice Image" style="max-width: 50px; max-height: 50px;">
+        </div>
+        <button class="edit-invoice-button" (click)="handleEdit(invoice)">Edit</button>
+      </div>
+    </div>
+  
+    <button class="add-invoice-button" (click)="toggleForm()">
+      {{ showForm ? 'Cancel' : '＋ Add Invoice' }}
+    </button>
+  
+    <div class="invoice-form" *ngIf="showForm">
+      <input
+        type="text"
+        placeholder="Description"
+        [(ngModel)]="formData.description"
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        [(ngModel)]="formData.amount"
+      />
+      <input
+        type="text"
+        placeholder="Invoice Number"
+        [(ngModel)]="formData.invoiceNumber"
+      />
+      <div class="upload-container">
+        <label for="imageUpload" class="upload-label">Upload Invoice</label>
+        <input
+          id="imageUpload"
+          type="file"
+          accept="image/*"
+          (change)="handleImageUpload($event)"
+          style="display: none;"
+        />
+        <div *ngIf="formData.imageUrl" class="image-preview">
+          <img [src]="formData.imageUrl" alt="Preview" style="max-height: 50px; max-width: 50px;">
+          <button type="button" (click)="formData.imageUrl = ''; formData.image = null;" class="remove-image-button">×</button>
+        </div>
+      </div>
+      <button (click)="handleAddOrUpdateInvoice()">
+        {{ editingInvoiceId ? 'Update' : 'Add' }}
+      </button>
+    </div>
+  </div>

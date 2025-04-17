@@ -1,0 +1,54 @@
+<div class="expense-container">
+  <h1 class="expense-title">Expenses</h1>
+
+  <div class="expense-list">
+    <div class="expense-row" *ngFor="let expense of expenses">
+      <span>{{ expense.description }}</span>
+      <span>Bill No: {{ expense.billNumber }}</span>
+      <span class="amount">-₹{{ expense.amount }}</span>
+      <div class="image-preview" *ngIf="expense.imageUrl">
+        <img [src]="expense.imageUrl" alt="Bill Image" style="max-width: 50px; max-height: 50px;">
+      </div>
+      <button class="edit-expense-button" (click)="handleEdit(expense)">Edit</button>
+    </div>
+  </div>
+
+  <button class="add-expense-button" (click)="toggleForm()">
+    {{ showForm ? 'Cancel' : '＋ Add Expense' }}
+  </button>
+
+  <div class="expense-form" *ngIf="showForm">
+    <input
+      type="text"
+      placeholder="Description"
+      [(ngModel)]="formData.description"
+    />
+    <input
+      type="number"
+      placeholder="Amount"
+      [(ngModel)]="formData.amount"
+    />
+    <input
+      type="text"
+      placeholder="Bill Number"
+      [(ngModel)]="formData.billNumber"
+    />
+    <div class="upload-container">
+      <label for="imageUpload" class="upload-label">Upload Bill</label>
+      <input
+        id="imageUpload"
+        type="file"
+        accept="image/*"
+        (change)="handleImageUpload($event)"
+        style="display: none;"
+      />
+      <div *ngIf="formData.imageUrl" class="image-preview">
+        <img [src]="formData.imageUrl" alt="Preview" style="max-height: 50px; max-width: 50px;">
+        <button type="button" (click)="formData.imageUrl = ''; formData.image = null;" class="remove-image-button">×</button>
+      </div>
+    </div>
+    <button (click)="handleAddOrUpdateExpense()">
+      {{ editingExpenseId ? 'Update' : 'Add' }}
+    </button>
+  </div>
+</div>

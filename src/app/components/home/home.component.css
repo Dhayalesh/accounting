@@ -1,0 +1,137 @@
+.dashboard-container {
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Summary Cards */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .summary-card h2 {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+  }
+  
+  .summary-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  /* Modules */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .module-button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .module-button:hover {
+    background-color: #eef3fa;
+    transform: translateY(-2px);
+  }
+  
+  .module-button svg,
+  .module-button mat-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .module-button span {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  /* Transactions */
+  .transactions {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+  }
+  
+  .transactions h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .transaction-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-top: 1px solid #eee;
+  }
+  
+  .transaction-row:first-child {
+    border-top: none;
+  }
+  
+  .transaction-row span {
+    font-size: 0.95rem;
+  }
+  
+  .transaction-row .income {
+    color: #2e7d32;
+    font-weight: bold;
+  }
+  
+  .transaction-row .expense {
+    color: #c62828;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .dashboard-title {
+      font-size: 1.5rem;
+    }
+  
+    .summary-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .transaction-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+  }
+  

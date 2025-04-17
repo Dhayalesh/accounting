@@ -1,0 +1,65 @@
+.reports-container {
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  .reports-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-button {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: #eef3fa;
+  }
+  
+  .filter-button.active {
+    background-color: #003dd6;
+    color: #fff;
+    border-color: #003dd6;
+  }
+  
+  .filters {
+    margin-bottom: 1.5rem;
+  }
+  
+  .month-filter, .year-filter {
+    margin-bottom: 1rem;
+  }
+  
+  .month-filter label, .year-filter label {
+    margin-right: 0.5rem;
+  }
+  
+  .month-filter select, .year-filter select {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .chart-wrapper {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  

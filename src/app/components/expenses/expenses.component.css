@@ -1,0 +1,179 @@
+.expense-container {
+  padding: 1.5rem;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.expense-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.expense-list {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.expense-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically in the row */
+  padding: 0.5rem 0;
+  border-top: 1px solid #eee;
+}
+
+.expense-row:first-child {
+  border-top: none;
+}
+
+.expense-row span {
+  font-size: 0.95rem;
+}
+
+.expense-row .amount {
+  color: #c62828;
+  font-weight: bold;
+}
+
+/* Add Button */
+.add-expense-button {
+  padding: 0.6rem 1rem;
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-expense-button:hover {
+  background-color: #256029;
+}
+
+/* Expense Form */
+.expense-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expense-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.expense-form button {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.expense-form button:hover {
+  background-color: #125ea6;
+}
+
+.edit-expense-button {
+  background-color: #f9a825;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.edit-expense-button:hover {
+  background-color: #f57f17;
+}
+
+/* New styles for image upload and bill number */
+.upload-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upload-label {
+  background-color: #64b5f6;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.upload-label:hover {
+  background-color: #42a5f5;
+}
+
+.image-preview {
+  position: relative;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .expense-title {
+    font-size: 1.5rem;
+  }
+
+  .expense-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .expense-form {
+    flex-direction: column;
+  }
+
+  .expense-form input,
+  .expense-form button,
+  .upload-container {
+    width: 100%;
+  }
+  .edit-expense-button {
+    margin-left: 0;
+    margin-top: 0.3rem;
+    width: fit-content;
+  }
+  .upload-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .image-preview {
+    margin-top: 0.5rem;
+  }
+}
