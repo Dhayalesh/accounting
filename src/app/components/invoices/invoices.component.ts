@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-invoicess',
+  selector: 'app-invoices',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './invoices.component.html',
