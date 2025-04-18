@@ -23,7 +23,7 @@ export class InvoicesComponent {
     amount: '',
     invoiceNumber: '',
     image: null,
-    imageUrl: '' // To display the image if it exists
+    imageUrl: '' 
   };
 
   toggleForm() {
