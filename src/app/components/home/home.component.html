@@ -13,7 +13,7 @@
       <div class="module-grid">
       <div class="module-button" *ngFor="let mod of modules" (click)="navigateTo(mod.name)">
         <mat-icon>{{ mod.icon }}</mat-icon>
-        <span>{{ mod.name }}</span>
+        <div>{{ mod.name }}</div>
       </div>
     </div>
   

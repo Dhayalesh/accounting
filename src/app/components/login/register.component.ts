@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router'; // ✅ Add RouterModule
+import { Router, RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // ✅ Add RouterModule here
+  imports: [CommonModule, FormsModule, RouterModule], 
   templateUrl: './register.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -26,7 +26,7 @@ export class RegisterComponent {
       return;
     }
 
-    // Simulate registration success
+
     this.errorMessage = '';
     this.router.navigate(['/login']);
   }

@@ -23,7 +23,7 @@ export class ExpensesComponent {
     amount: '',
     billNumber: '',
     image: null,
-    imageUrl: '' // To display the image if it exists
+    imageUrl: '' 
   };
 
   toggleForm() {
@@ -36,8 +36,6 @@ export class ExpensesComponent {
     const file = event.target.files[0];
     if (file) {
       this.formData.image = file;
-      // You might want to implement a service to upload this to a server
-      // For this example, we'll just store a local URL for display
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.formData.imageUrl = e.target.result;

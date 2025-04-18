@@ -2,7 +2,7 @@
   <h1 class="expense-title">Expenses</h1>
 
   <div class="expense-list">
-    <div class="expense-row" *ngFor="let expense of expenses">
+    <div *ngFor="let expense of expenses" class="expense-row">
       <span>{{ expense.description }}</span>
       <span>Bill No: {{ expense.billNumber }}</span>
       <span class="amount">-₹{{ expense.amount }}</span>
@@ -47,8 +47,8 @@
         <button type="button" (click)="formData.imageUrl = ''; formData.image = null;" class="remove-image-button">×</button>
       </div>
     </div>
-    <button (click)="handleAddOrUpdateExpense()">
-      {{ editingExpenseId ? 'Update' : 'Add' }}
+    <button (click)="handleAddOrUpdateExpense()" class="add-expense-button">
+      {{ editingExpenseId ? 'Update' : 'Add' }} Expense
     </button>
   </div>
 </div>
