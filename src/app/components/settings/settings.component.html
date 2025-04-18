@@ -1,0 +1,92 @@
+<div class="settings-container">
+    <div class="settings-card">
+      <h2 class="settings-title">Settings</h2>
+      <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()" class="settings-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-input"
+            placeholder="Full Name"
+          />
+          <div *ngIf="settingsForm.get('name')?.invalid && (settingsForm.get('name')?.dirty || settingsForm.get('name')?.touched)">
+            <p *ngIf="settingsForm.get('name')?.errors?.['required']" class="error-message">Name is required</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-input"
+            placeholder="Email"
+          />
+          <div *ngIf="settingsForm.get('email')?.invalid && (settingsForm.get('email')?.dirty || settingsForm.get('email')?.touched)">
+            <p *ngIf="settingsForm.get('email')?.errors?.['required']" class="error-message">Email is required</p>
+            <p *ngIf="settingsForm.get('email')?.errors?.['email']" class="error-message">Invalid email format</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            formControlName="phone"
+            class="form-input"
+            placeholder="Phone Number"
+          />
+          <div *ngIf="settingsForm.get('phone')?.invalid && (settingsForm.get('phone')?.dirty || settingsForm.get('phone')?.touched)">
+            <p *ngIf="settingsForm.get('phone')?.errors?.['pattern']" class="error-message">Invalid phone number</p>
+          </div>
+        </div>
+  
+        <div class="password-section">
+          <h3 class="password-title">Change Password</h3>
+          <div class="form-group">
+            <label for="existingPassword" class="form-label">Current Password</label>
+            <input
+              type="password"
+              id="existingPassword"
+              formControlName="existingPassword"
+              class="form-input"
+              placeholder="Current Password"
+            />
+            <p *ngIf="errors['existingPassword']" class="error-message">{{ errors['existingPassword'] }}</p>
+          </div>
+          <div class="form-group">
+            <label for="newPassword" class="form-label">New Password</label>
+            <input
+              type="password"
+              id="newPassword"
+              formControlName="newPassword"
+              class="form-input"
+              placeholder="New Password"
+            />
+            <div *ngIf="settingsForm.get('newPassword')?.invalid && (settingsForm.get('newPassword')?.dirty || settingsForm.get('newPassword')?.touched)">
+              <p *ngIf="settingsForm.get('newPassword')?.errors?.['minlength']" class="error-message">Password must be at least 8 characters</p>
+            </div>
+            <p *ngIf="errors['newPassword']" class="error-message">{{ errors['newPassword'] }}</p>
+          </div>
+          <div class="form-group">
+            <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+            <input
+              type="password"
+              id="confirmNewPassword"
+              formControlName="confirmNewPassword"
+              class="form-input"
+              placeholder="Confirm New Password"
+            />
+            <p *ngIf="errors['confirmNewPassword']" class="error-message">{{ errors['confirmNewPassword'] }}</p>
+          </div>
+        </div>
+  
+        <button type="submit" class="save-button" [disabled]="isSaved">
+          {{ isSaved ? 'Saving...' : 'Save Settings' }}
+        </button>
+        <p *ngIf="isSaved" class="success-message">Settings have been saved. Redirecting...</p>
+      </form>
+    </div>
+  </div>
