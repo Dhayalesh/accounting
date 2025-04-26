@@ -23,6 +23,10 @@ export class HomeComponent {
     { name: 'Invoices', icon: 'description' },
     { name: 'Expense', icon: 'account_balance_wallet' },
     { name: 'Reports', icon: 'bar_chart' },
+    { name: 'Vendors', icon: 'business' },
+    { name: 'Products', icon: 'laptop' },
+    { name: 'Services', icon: 'people' },
+    { name: 'Customers', icon: 'people' },
     { name: 'Settings', icon: 'settings' }
   ];
 
@@ -31,6 +35,10 @@ export class HomeComponent {
   else if (name === 'Expense') this.router.navigate(['/expenses']);
   else if (name === 'Invoices') this.router.navigate(['/invoices']);
   else if (name === 'Settings') this.router.navigate(['/settings']);
+  else if (name === 'Vendors') this.router.navigate(['/vendors']);
+  else if (name === 'Products') this.router.navigate(['/products']);
+  else if (name === 'Customers') this.router.navigate(['/customers']);
+  else if (name === 'Services') this.router.navigate(['/services']);
   }
   
 }

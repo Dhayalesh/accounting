@@ -1,0 +1,28 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Products</h1>
+  
+  <button class="module-button" (click)="toggleForm()">
+    <mat-icon>add</mat-icon>
+    <span>Add New</span>
+  </button>
+
+  <div *ngIf="showForm" class="add-form">
+    <input type="text" placeholder="Product Name" [(ngModel)]="newProduct.name" />
+    <input type="text" placeholder="Description" [(ngModel)]="newProduct.description" />
+    <input type="number" placeholder="Rate" [(ngModel)]="newProduct.rate" />
+    <input type="text" placeholder="Unit" [(ngModel)]="newProduct.unit" />
+    
+    <button class="module-button" (click)="addProduct()">
+      <mat-icon>check</mat-icon>
+      <span>Save</span>
+    </button>
+  </div>
+
+  <div class="transactions">
+    <h2>Product List</h2>
+    <div class="transaction-row" *ngFor="let product of products">
+      <span>{{ product.name }} - {{ product.unit }}</span>
+      <span>₹{{ product.rate }}</span>
+    </div>
+  </div>
+</div>

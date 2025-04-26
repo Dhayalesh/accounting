@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Vendors</h1>
+
+  <button class="module-button" (click)="toggleForm()">
+    <mat-icon>add</mat-icon>
+    <span>Add New Vendor</span>
+  </button>
+
+  <div *ngIf="showForm" class="add-form">
+    <input type="text" placeholder="Company Name" [(ngModel)]="newVendor.name" />
+    <input type="text" placeholder="Contact Person" [(ngModel)]="newVendor.contact" />
+    <input type="email" placeholder="Email" [(ngModel)]="newVendor.email" />
+    <input type="text" placeholder="Phone" [(ngModel)]="newVendor.phone" />
+    <select [(ngModel)]="newVendor.status">
+      <option value="Active">Active</option>
+      <option value="Pending">Pending</option>
+      <option value="Inactive">Inactive</option>
+    </select>
+
+    <button class="module-button" (click)="addVendor()">
+      <mat-icon>check</mat-icon>
+      <span>Save</span>
+    </button>
+  </div>
+
+  <div class="transactions">
+    <h2>Vendor List</h2>
+    <div class="transaction-row" *ngFor="let vendor of vendors">
+      <span>{{ vendor.name }} ({{ vendor.status }})</span>
+      <span>{{ vendor.phone }}</span>
+    </div>
+  </div>
+</div>

@@ -58,10 +58,11 @@
 
 .module-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, 1fr); 
   gap: 1rem;
   margin-bottom: 2rem;
 }
+
 
 .module-button {
   background: linear-gradient(to bottom right, #ffffff, #e3f2fd);
@@ -152,5 +153,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.3rem;
+  }
+  .module-grid {
+    grid-template-columns: repeat(2 , 1fr);
   }
 }
